@@ -1,3 +1,4 @@
 <h2>Import </h2>
-<input type="file" (change)="csv2Array($event)" [(ngModel)]="csvArray"/>
-<h3>{{ csvArray }}</h3>
+<input type="file" (change)="csv2Array($event)"/>
+<input type="button" (click)="print_Content();" value="Click Me!"/>
+<h3>{{Output}}</h3>
