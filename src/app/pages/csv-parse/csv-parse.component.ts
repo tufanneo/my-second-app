@@ -34,7 +34,7 @@ export class CsvParseComponent implements OnInit {
     this.csvArray = this.tableData[i]
     console.log( `<route>\n\t<user type="E164">${this.csvArray["number"]}</user>\n\t<next type="regex">!(^.*$)!sip:\\1@${this.csvArray["ipAddress"]}!</next>\n</route>\n`);
     let output = (`&ltroute&gt<br>&emsp;&ltuser type="E164"&gt${this.csvArray["number"]}&lt/user&gt<br>&emsp;&ltnext type="regex"&gt!(^.*$)!sip:\\1@${this.csvArray["ipAddress"]}!&lt/next&gt<br>&lt/route&gt<br>`);
-    var myWindow = window.open("", "MsgWindow", "width=200, height=100");
+    var myWindow = window.open("", "MsgWindow", "width=1000, height=1000");
     myWindow.document.write(output);
     i++
       }

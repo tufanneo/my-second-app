@@ -4,7 +4,6 @@ import { FormsModule } from '@angular/forms';
 
 import { AppComponent } from './app.component';
 import { LrtToolComponent } from './pages/lrt-tool/lrt-tool.component';
-import { PhoneNumberValidatorComponent } from './pages/phone-number-validator/phone-number-validator.component';
 import { CsvParseComponent } from './pages/csv-parse/csv-parse.component';
 
 
@@ -17,7 +16,6 @@ import { CsvParseComponent } from './pages/csv-parse/csv-parse.component';
   declarations: [
     AppComponent,
     LrtToolComponent,
-    PhoneNumberValidatorComponent,
     CsvParseComponent
   ],
   imports: [
