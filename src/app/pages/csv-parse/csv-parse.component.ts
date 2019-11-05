@@ -33,16 +33,14 @@ csvArray: any
     console.log(this.csvLength);
     console.log(this.tableData[i])
     console.log(this.csvArray["ipAddress"]);
+    console.log( `<route>\n\t<user type="E164">${this.csvArray["number"]}</user>\n\t<next type="regex">!(^.*$)!sip:\\1@${this.csvArray["ipAddress"]}!</next>\n</route>\n`);
     /** 
     My Attempt in getting a two way bind from inside a while loop.
     **
-
     this.xmlOutput = `<route>\n\t<user type="E164">${this.csvArray["number"]}</user>\n\t<next type="regex">!(^.*$)!sip:\\1@${this.csvArray["ipAddress"]}!</next>\n</route>\n`
-    
     */
     this.tableData[i++];
     console.log(this.xmlOutput);
-    
       }
       }
     }
