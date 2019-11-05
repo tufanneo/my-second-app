@@ -12,9 +12,12 @@ export class CsvParseComponent implements OnInit {
   constructor() { }
 
   ngOnInit() {
+    console.log(this.csvGlobal);
   }
 
-csvArray: any
+    csvArray = ""
+    csvGlobal = ""
+  
 
 
   csv2Array(fileInput) {
@@ -29,17 +32,17 @@ csvArray: any
   /** Main loop that outputs XML, with some console.logging to check variables */
   while(i < this.csvLength){
     this.csvArray = this.tableData[i]
-    console.log(this.tableMeta);
+    /**console.log(this.tableMeta);
     console.log(this.csvLength);
     console.log(this.tableData[i])
-    console.log(this.csvArray["ipAddress"]);
+    console.log(this.csvArray["ipAddress"]);*/
     console.log( `<route>\n\t<user type="E164">${this.csvArray["number"]}</user>\n\t<next type="regex">!(^.*$)!sip:\\1@${this.csvArray["ipAddress"]}!</next>\n</route>\n`);
     /** 
     My Attempt in getting a two way bind from inside a while loop.
     **/
     this.xmlOutput = `<route>\n\t<user type="E164">${this.csvArray["number"]}</user>\n\t<next type="regex">!(^.*$)!sip:\\1@${this.csvArray["ipAddress"]}!</next>\n</route>\n`
-    this.tableData[i++];
-    console.log(this.xmlOutput);
+    this.csvGlobal = this.xmlOutput;
+    i++
       }
       }
     }
@@ -53,4 +56,9 @@ csvArray: any
       const xmlOutput = `<route>\n\t<user type="E164">${this.csvArray["number"]}</user>\n\t<next type="regex">!(^.*$)!sip:\\1@${this.csvArray["ipAddress"]}!</next>\n</route>\n`
     }*/
   }
+  printGlobal(){
+    console.log(this.csvGlobal);
+  };
+  
+
 };

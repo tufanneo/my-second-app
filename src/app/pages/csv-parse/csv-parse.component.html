@@ -1,3 +1,3 @@
 <h2>Import </h2>
-<input type="file" (change)="csv2Array($event)"/>
-<h3 [(ngModel)]="xmlOutput">{{ xmlOutput }}</h3>
+<input type="file" (change)="csv2Array($event)" [(ngModel)]="csvArray"/>
+<h3>{{ csvArray }}</h3>
