@@ -48,4 +48,3 @@ export class CsvParseComponent implements OnInit {
       let csvArray = this.tableData[i]
       const xmlOutput = `<route>\n\t<user type="E164">${this.csvArray["number"]}</user>\n\t<next type="regex">!(^.*$)!sip:\\1@${this.csvArray["ipAddress"]}!</next>\n</route>\n`
     }*/
-
